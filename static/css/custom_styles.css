@@ -1,0 +1,122 @@
+/* Base styling  */
+body {
+    background-color: #f9f9f9;
+    color: #0a0c0e;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form container styling */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Form Title */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #111010;
+}
+
+/* Form rows containing input fields */
+.form-container .form-row {
+    margin-bottom: 20px;
+}
+
+.form-container .form-row label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Styling for input and textarea elements */
+.form-container .form-row input,
+.form-container .form-row textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Prevent resizing of textarea */
+textarea {
+    resize: none;
+}
+
+/* Styling for message boxes */
+.form-container .messages {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    border-radius: 5px;
+}
+
+/* Layout and styling for buttons */
+.form-container .form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form-container .form-actions button {
+    padding: 10px 25px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.form-container .form-actions button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Styling for button-like links */
+.form-container .form-actions a.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for button-like links */
+.form-container .form-actions a.btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Styling for standard links */
+.form-container a {
+    color: #007bff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Hover effect for standard links */
+.form-container a:hover {
+    color: #0056b3;
+}
+
+

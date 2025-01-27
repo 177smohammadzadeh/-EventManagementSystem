@@ -1,0 +1,60 @@
+
+{% extends "shared/layout.html" %}
+<!-- Extends the base layout -->
+
+{% block title %}Edit Event{% endblock %}
+<!-- Sets the page title to "Edit Event" -->
+
+{% block content %}
+<div class="form-container">
+    <h1>Edit Event</h1>
+    <!-- Page heading -->
+
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <!-- Adds CSRF token for form security -->
+
+        <!-- Title -->
+        <div class="form-row">
+            <label for="title">Title:</label>
+            {{ form.title }}
+            <!-- Field to edit the event title -->
+        </div>
+
+        <!-- Description -->
+        <div class="form-row">
+            <label for="description">Description:</label>
+            {{ form.description }}
+            <!-- Field to edit the event description -->
+        </div>
+
+        <!-- Date and Time -->
+        <div class="form-row">
+            <label for="date">Date and Time:</label>
+            {{ form.date }}
+            <!-- Field to update the event's date and time -->
+        </div>
+
+        <!-- Attachment -->
+        <div class="form-row">
+            <label for="edit-attachment">Attachment:</label>
+            {% if event.attachment %}
+                <div class="attachment-currently">
+                    Currently: <a href="{{ event.attachment.url }}" download>Download File</a>
+                    <!-- Displays the current attachment with a download link -->
+                </div>
+            {% endif %}
+            <input type="file" id="edit-attachment" name="attachment">
+            <!-- Field to upload a new attachment -->
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+            <button type="submit" class="btn">Save Changes</button>
+            <!-- Submit button to save edits -->
+            <a href="{% url 'event_detail' event.id %}" class="btn">Cancel</a>
+            <!-- Cancel button to navigate back to the event details -->
+        </div>
+    </form>
+</div>
+{% endblock %}

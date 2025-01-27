@@ -1,0 +1,38 @@
+{% extends "shared/layout.html" %}
+<!-- Extends the base layout -->
+
+{% block content %}
+<div class="form-container">
+    <h1>Login</h1>
+    <!-- Title for the login form -->
+
+     {% if messages %}
+     <div class="messages">
+        {% for message in messages %}
+        <!-- Display any flash messages dynamically -->
+        <div class="alert {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="post" action="">
+        {% csrf_token %}
+        <!-- Adds CSRF token for form security -->
+
+        <div class="form-row">
+            <label for="username">Username:</label>
+            <!-- Input field for the username -->
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-row">
+            <label for="password">Password:</label>
+            <!-- Input field for the password -->
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-actions">
+            <!-- Submit button to log in -->
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

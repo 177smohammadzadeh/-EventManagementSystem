@@ -1,0 +1,37 @@
+/* helper text for form inputs */
+.form-container .form-row div {
+    font-size: 0.9rem;
+    color: gray;
+    margin-top: 5px;
+}
+
+/* Password-specific helper text */
+.form-container .form-row div ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: disc;
+    color: #888;
+}
+
+.form-container .form-row div ul li {
+    font-size: 0.85rem;
+}
+
+/* Helper text for email field */
+.form-container .form-row #email + div::before {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* General form styling */
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+

@@ -1,0 +1,49 @@
+{% extends "shared/layout.html" %}
+<!-- Extends the base layout -->
+
+{% block title %}Add Event{% endblock %}
+<!-- Sets the page title to "Add Event" -->
+
+{% block content %}
+<div class="form-container">
+    <h1>Add Event</h1>
+    <!-- Page heading -->
+
+    <form method="post" enctype="multipart/form-data" action="{% url 'add_event' %}">
+        {% csrf_token %}
+        <!-- Adds CSRF token for form security -->
+
+        <!-- Title input field -->
+        <div class="form-row">
+            <label for="title">Title:</label>
+            {{ form.title }}
+        </div>
+
+        <!-- Description input field -->
+        <div class="form-row">
+            <label for="description">Description:</label>
+            {{ form.description }}
+        </div>
+
+        <!-- Date and time input field -->
+        <div class="form-row">
+            <label for="date">Date and Time:</label>
+            {{ form.date }}
+        </div>
+
+        <!-- File attachment input -->
+        <div class="form-row">
+            <label for="add-attachment">Attachment:</label>
+            <input type="file" id="add-attachment" name="attachment">
+        </div>
+
+        <!-- Form action buttons -->
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <!-- Submit button to save the event -->
+            <a class="btn btn-secondary" href="{% url 'home' %}">Back to Home</a>
+            <!-- Link to navigate back to the homepage -->
+        </div>
+    </form>
+</div>
+{% endblock %}

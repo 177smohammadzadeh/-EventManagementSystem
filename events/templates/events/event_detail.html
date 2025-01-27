@@ -1,0 +1,37 @@
+
+{% extends "shared/layout.html" %}
+<!-- Extends the base layout -->
+
+{% block title %}Event Details{% endblock %}
+<!-- Sets the page title to "Event Details" -->
+
+{% block content %}
+<div class="form-container">
+    <h1 class="event-title">{{ event.title }}</h1>
+    <!-- Displays the title of the event -->
+
+    <div class="form-row">
+        <p><strong>Description:</strong></p>
+        <p class="form-row">{{ event.description }}</p>
+        <!-- Displays the event description -->
+
+        <p><strong>Date and Time:</strong> {{ event.date|date:"Y-m-d H:i" }}</p>
+        <!-- Displays the event date and time in a formatted manner -->
+
+        {% if event.attachment %}
+            <p><strong>Attachment:</strong>
+                <a class="btn" href="{{ event.attachment.url }}" download>Download File</a>
+                <!-- Provides a download link for the event attachment -->
+            </p>
+        {% else %}
+            <p>No attachment available.</p>
+        {% endif %}
+        <div class="form-actions">
+            <a class="btn" href="{% url 'edit_event' event.id %}">Edit Event</a>
+            <!-- Link to navigate to the edit event page -->
+            <a class="btn" href="{% url 'home' %}">Back to Home</a>
+            <!-- Link to return to the home page -->
+        </div>
+    </div>
+</div>
+{% endblock %}

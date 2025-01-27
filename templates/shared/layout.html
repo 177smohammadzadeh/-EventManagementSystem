@@ -1,0 +1,50 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures proper display on mobile devices by setting the viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <!-- Linking CSS files for styling -->
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/custom_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'events/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/register.css' %}">
+</head>
+<body>
+    <!-- Site header -->
+    <header class="site-header">
+        {% include "shared/header.html" %}
+        <!-- Includes shared header template -->
+    </header>
+    
+    {% if messages %}
+    <div>
+        {% for message in messages %}
+            <!-- Display flash messages -->
+            <div class="alert {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <!-- Main content area -->
+    <main class="site-main">
+        {% block content %}{% endblock %}
+        <!-- Content block for individual page templates -->
+    </main>
+    
+    <!-- Site footer -->
+    <footer class="site-footer">
+        {% include "shared/footer.html" %}
+        <!-- Includes shared footer template -->
+    </footer>
+    
+    <!-- JavaScript for delete events -->
+    <script src="{% static 'events/js/delete_event.js' %}"></script>
+</body>
+</html> 

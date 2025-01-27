@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HTML document declaration -->
+    <meta charset="UTF-8">
+    <!-- Defines UTF-8 character encoding for better compatibility -->
+    <title>
+        {% block title %}{% endblock %}
+        <!-- Title block: to be replaced in child templates -->
+    </title>
+</head>
+<body>
+    {% block content %}
+        <!-- Content block: this is where child templates can insert their content -->
+    {% endblock %}
+</body>
+</html>

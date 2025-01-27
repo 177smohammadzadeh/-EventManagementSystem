@@ -1,0 +1,28 @@
+{% extends "shared/layout.html" %}
+<!-- Extends the base layout -->
+
+
+{% block title %}List of Backups{% endblock %}
+<!-- Sets the page title to "Backups" -->
+
+{% block content %}
+<div class="container">
+    <h1>Available Backups</h1>
+    <!-- Page heading -->
+
+    <ul>
+        {% for backup in backups %}
+            <li>
+                <strong>Date:</strong>
+                <a href="{% url 'download_backup' file_path=backup.file_path %}" download>
+                    Download {{ backup.file_path }}
+                    <!-- Link to download the backup file -->
+                </a>
+            </li>
+        {% empty %}
+            <li>No backups found.</li>
+            <!-- Message displayed if no backups are available -->
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

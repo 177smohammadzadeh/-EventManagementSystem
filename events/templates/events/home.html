@@ -1,0 +1,42 @@
+
+{% extends "shared/layout.html" %}
+<!-- Extends the base layout -->
+
+{% block title %}Event Planner{% endblock %}
+<!-- Sets the page title to "Event Planner" -->
+
+{% block content %}
+<h1>Event Planner</h1>
+<!-- Page heading -->
+
+<div class="planner-container">
+    {% for day, events in planner.items %}
+        <div class="planner-column">
+            <div class="column-header">
+                <h2>{{ day }}</h2>
+                <!-- Displays the date as the column header -->
+                <div>{{ day }}</div>
+                <button class="add-event-btn" onclick="location.href='{% url 'add_event' %}?date={{ day|date:'Y-m-d' }}'">+</button>
+                <!-- Button to add a new event for the specific day -->
+            </div>
+            <div class="events">
+                {% for event in events %}
+                    <div class="event-box">
+                        <a href="{% url 'event_detail' event.id %}">
+                            <h3>{{ event.title }}</h3>
+                            <p>{{ event.description }}</p>
+                            <p>{{ event.date|date:"Y-m-d H:i" }}</p>
+                            <!-- Displays event details like title, description, and date -->
+                        </a>
+                        <button class="delete-event-btn" onclick="deleteEvent({{ event.id }})">x</button>
+                        <!-- Button to delete the event -->
+                    </div>
+                {% empty %}
+                    <p class="no-event">No events for this day.</p>
+                    <!-- Message displayed if there are no events for the day -->
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load static %}
+<header>
+    <nav>
+        <ul>
+            <!-- The Home link is always visible -->
+            <li><a href="/">Home</a></li>
+
+            <!-- Check if the user is logged in -->
+            {% if user.is_authenticated %}
+                <!-- Show a welcome message  -->
+                <li>Welcome, {{ user.first_name }} {{ user.last_name }}</li>
+                <!-- Link to log out -->
+                <li><a href="{% url 'logout' %}">Logout</a></li>                
+                <!-- Link to create a backup -->
+                <li><a href="{% url 'create_backup' %}" id="createBackup">Create Backup</a></li>
+                <!-- Link to view or download backups -->
+                <li><a href="{% url 'backup_list' %}">Download Backup</a></li>
+                
+            {% else %}
+                <!-- Link to the login page -->
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <!-- Link to the registration page -->
+                <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
