@@ -9,12 +9,20 @@ This document provides simple steps to run and access the Event Management Syste
 ### 1. GitHub Repository
 
 All source code, including the Dockerfile, requirements.txt, and documentation, is available in this repository:
-GitHub Repository
+
+[GitHub Repository](https://github.com/177smohammadzadeh/-EventManagementSystem)
 
 ### 2. Live Version (Google Cloud Run)
 
 The project is deployed on Google Cloud Run. You can access it directly via this link:
-Event Management System (Live)
+
+https://eventmanagementsystem-916190127738.us-west1.run.app
+
+User: admin
+
+Password:123456
+
+
 
 ---
 
@@ -37,7 +45,7 @@ If you prefer to run the project on your local machine, follow these steps:
 
 Download the project from GitHub:
 
-git clone https://github.com/177smohammadzadeh/EventManagementSystem.git
+git clone https://github.com/177smohammadzadeh/-EventManagementSystem
 cd EventManagementSystem
 
 #### 2. Build the Docker Image
