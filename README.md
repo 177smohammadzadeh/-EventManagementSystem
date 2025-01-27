@@ -32,8 +32,7 @@ Password:123456
 
 You don’t need to install anything. Open the link below in your browser to access the project:
 
-https://eventmanagementproject-328272549003.us-central1.run.app
-
+https://eventmanagementsystem-916190127738.us-west1.run.app
 ---
 
 
