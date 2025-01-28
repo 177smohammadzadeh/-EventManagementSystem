@@ -103,6 +103,9 @@ docker buildx build --platform linux/amd64 -t your-docker-image-name:tag --push 
 
 <img width="1710" alt="Screenshot 2025-01-28 at 01 26 34" src="https://github.com/user-attachments/assets/1e42b43f-3d6e-4de9-9c7b-1e4cd8e349de" />
 
+<img width="1270" alt="Screenshot 2025-01-28 at 01 31 37" src="https://github.com/user-attachments/assets/88afa5ea-8aa7-4406-802d-fb5810d39e8c" />
+
+
 #### 3. Run the Docker Container
 
 Run the image locally:
