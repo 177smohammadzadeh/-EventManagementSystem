@@ -32,6 +32,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'eventmanagementsystem-916190127738.us-west1.run.app',
+    '0.0.0.0',
+    'localhost',
+    '127.0.0.1',
 ]
 CSRF_TRUSTED_ORIGINS = [
     'https://eventmanagementsystem-916190127738.us-west1.run.app',
