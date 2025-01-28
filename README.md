@@ -77,49 +77,36 @@ http://127.0.0.1:8000
 
 ---
 
-### Option 3: Run Locally with Docker
+### Option 3: Run Locally with Docker Compose
 
-If you prefer to run the project on your local machine, follow these steps:
+If you prefer to run the project locally with Docker Compose, follow these steps:
 
 #### 1. Clone the Repository
 
 Download the project from GitHub:
 
-git clone https://github.com/177smohammadzadeh/-EventManagementSystem
-
+git clone https://github.com/177smohammadzadeh/-EventManagementSystem.git
 cd EventManagementSystem
 
-#### 2. Build the Docker Image
+#### 2. Build and Run the Services
 
-Create the Docker image:
+Use Docker Compose to build and run all services (web, database, Redis, Celery) together:
 
-in MacOs and Linux:
+docker-compose up --build
 
-docker buildx build --platform linux/amd64 -t us-west1-docker.pkg.dev/eventmanagementsystem-449022/my-repo/eventmanagementsystem-main:latest --push .
+<img width="1710" alt="Screenshot 2025-01-28 at 02 44 10" src="https://github.com/user-attachments/assets/90da0f89-d5ad-42da-9b08-94d8aa22cf32" />
 
-For Windows(using Powershell):
+<img width="1265" alt="Screenshot 2025-01-28 at 02 39 04" src="https://github.com/user-attachments/assets/cbb609d6-cb3d-479a-8fc2-1a09d9af3844" />
 
-docker buildx build --platform linux/amd64 -t your-docker-image-name:tag --push .
+### 3. Access the Application
 
-<img width="1710" alt="Screenshot 2025-01-28 at 01 26 34" src="https://github.com/user-attachments/assets/1e42b43f-3d6e-4de9-9c7b-1e4cd8e349de" />
+After running the above command:
 
-<img width="1270" alt="Screenshot 2025-01-28 at 01 31 37" src="https://github.com/user-attachments/assets/88afa5ea-8aa7-4406-802d-fb5810d39e8c" />
+The web application will be available at:
 
+http://0.0.0.0:8000
 
-#### 3. Run the Docker Container
-
-Run the image locally:
-
-docker run -p 8000:8000 event-management-system:latest
-
-<img width="1710" alt="Screenshot 2025-01-28 at 01 28 01" src="https://github.com/user-attachments/assets/e7f7756f-9cd4-4637-80c9-14842f130026" />
-
-
-#### 4. Access the Project
-
-Open your browser and go to:
-
-http://localhost:8000
+---
 
 ### Project Structure
 - `Dockerfile`: Contains the instructions to build the Docker image.
